@@ -1,4 +1,4 @@
-<img align="left" src="../proof-tool/icon/icon-readme.png">
+<img align="left" src="https://github.com/deontic-logic/proof-tool/raw/master/icon/icon-readme.png">
 
 # deontic-logic.github.io
 
