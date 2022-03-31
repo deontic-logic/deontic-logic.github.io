@@ -1,5 +1,4 @@
-﻿<!-- This file has been archived at 31 Mar 2022 08:45:41 to https://web.archive.org/web/20220331084541/https://deontic-logic.github.io/readme_statdeps_v3.html -->
-<html><head>
+﻿<html><head>
 <meta charset="UTF-8">
 <title>README</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -211,7 +210,7 @@ b, strong {
 <meta name="savepage-title" content="README">
 <meta name="savepage-pubdate" content="Unknown">
 <meta name="savepage-from" content="https://github.com/deontic-logic/proof-tool/blob/master/README_statdeps_v3.html">
-<meta name="savepage-date" content="Thu Mar 31 2022 10:18:39 GMT+0200 (Mitteleuropäische Sommerzeit)">
+<meta name="savepage-date" content="Thu Mar 31 2022 12:49:57 GMT+0200 (Mitteleuropäische Sommerzeit)">
 <meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
 <meta name="savepage-version" content="27.3">
 <meta name="savepage-comments" content="">
@@ -300,7 +299,7 @@ b, strong {
 </li>
 </ul>
 <h2 id="build">Build</h2>
-<p>I have built <a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.1.3">wxWidgets 3.1.3</a> on my own and obtained compatible static libraries for Cairo 1.16.0 and GMP 6.1.2 from <a href="https://github.com/rwinlib/cairo/releases/tag/v1.16.0">rwinlib/cairo</a> and <a href="https://github.com/rwinlib/gmp/releases/tag/v6.1.2">rwinlib/gmp</a>, respectively.\
+<p>I have built <a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.1.3">wxWidgets 3.1.3</a> on my own and obtained compatible static libraries for Cairo 1.16.0 and GMP 6.1.2 from <a href="https://github.com/rwinlib/cairo/releases/tag/v1.16.0">rwinlib/cairo</a> and <a href="https://github.com/rwinlib/gmp/releases/tag/v6.1.2">rwinlib/gmp</a>, respectively.<br>
 Utilized compilers were taken from <a href="https://github.com/brechtsanders/winlibs_mingw/releases/tag/11.2.0-9.0.0-msvcrt-r6">GCC 11.2.0 + MinGW-w64 9.0.0 MSVCRT (release 6)</a>. These are <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-msvcrt-r6/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6.7z">posix-dwarf-gcc-11.2.0</a> for 32 bit and <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-msvcrt-r6/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6.7z">posix-seh-gcc-11.2.0</a> for 64 bit.</p>
 <h3 id="wxwidgets-3-1-3">wxWidgets 3.1.3</h3>
 <p>Configuring commands for wxWidgets 3.1.3 that I executed in <a href="https://github.com/mintty/mintty">Mintty's Cygwin64 Terminal</a> while having the appropriate standalone MinGW-w64 compiler version installed:</p>
@@ -323,13 +322,13 @@ Utilized compilers were taken from <a href="https://github.com/brechtsanders/win
 </code></pre><p>for debug builds.</p>
 <h4 id="walkthrough">Walkthrough</h4>
 <ol>
-<li>Put the MinGW-w64 <code>bin</code> folder path into the system environment variable 'Path', and remove all other paths of GCC versions.\
-For example, <code>C:/mingw-w64/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw32/bin</code> for 32 bit\
+<li>Put the MinGW-w64 <code>bin</code> folder path into the system environment variable 'Path', and remove all other paths of GCC versions.<br>
+For example, <code>C:/mingw-w64/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw32/bin</code> for 32 bit<br>
 and <code>C:/mingw-w64/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw64/bin</code> for 64 bit.</li>
 <li>Extract <a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxWidgets-3.1.3.7z">wxWidgets-3.1.3.7z</a> to <code>C:/wxWidgets-3.1.3</code>.</li>
 <li>Execute commands in Cygwin64 Terminal:<ul>
 <li><code>cd C:/wxWidgets-3.1.3</code></li>
-<li><code>./configure [...]</code> depending on the variant as noted above
+<li><code>./configure [...]</code> depending on the variant as noted above<br>
 My result of the configure command looked like:<pre><code>Which GUI toolkit should wxWidgets <span>use</span>?                 msw
 Should wxWidgets be <span>compiled</span> <span>into</span> single <span>library</span>?       yes
 Should wxWidgets be linked <span>as</span> a <span>shared</span> <span>library</span>?         <span>no</span>
@@ -353,7 +352,7 @@ Which libraries should wxWidgets <span>use</span>?
 </li>
 <li>In <code>./Makefile</code>, change <code>wx_top_builddir = /cygdrive/c/wxWidgets-3.1.3</code> to <code>wx_top_builddir = C:/wxWidgets-3.1.3</code>.</li>
 <li>Execute command in Cygwin64 Terminal:<ul>
-<li><code>mingw32-make [...]</code> depending on the variant as noted above
+<li><code>mingw32-make [...]</code> depending on the variant as noted above<br>
 The process terminates with an error <code>mingw32-make: *** [makefile:14768: wxrc] Error 2</code>, but built all the static libraries already.</li>
 </ul>
 </li>

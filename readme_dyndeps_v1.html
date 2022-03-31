@@ -1,5 +1,4 @@
-﻿<!-- This file has been archived at 31 Mar 2022 08:46:03 to https://web.archive.org/web/20220331084603/https://deontic-logic.github.io/readme_dyndeps_v1.html -->
-<html><head>
+﻿<html><head>
 <meta charset="UTF-8">
 <title>README</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -211,7 +210,7 @@ b, strong {
 <meta name="savepage-title" content="README">
 <meta name="savepage-pubdate" content="Unknown">
 <meta name="savepage-from" content="https://github.com/deontic-logic/proof-tool/blob/master/README_dyndeps_v1.html">
-<meta name="savepage-date" content="Thu Mar 31 2022 10:17:30 GMT+0200 (Mitteleuropäische Sommerzeit)">
+<meta name="savepage-date" content="Thu Mar 31 2022 12:50:15 GMT+0200 (Mitteleuropäische Sommerzeit)">
 <meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
 <meta name="savepage-version" content="27.3">
 <meta name="savepage-comments" content="">
@@ -308,7 +307,7 @@ b, strong {
 </li>
 </ul>
 <h2 id="build">Build</h2>
-<p>The utilized compilers were taken from <a href="https://github.com/brechtsanders/winlibs_mingw/releases/tag/11.2.0-9.0.0-msvcrt-r6">GCC 11.2.0 + MinGW-w64 9.0.0 MSVCRT (release 6)</a>. The <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-msvcrt-r6/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6.7z">32 bit variant</a> is <em>posix-dwarf</em>, and the <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-msvcrt-r6/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6.7z">64 bit variant</a> is <em>posix-seh</em>.\
+<p>The utilized compilers were taken from <a href="https://github.com/brechtsanders/winlibs_mingw/releases/tag/11.2.0-9.0.0-msvcrt-r6">GCC 11.2.0 + MinGW-w64 9.0.0 MSVCRT (release 6)</a>. The <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-msvcrt-r6/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6.7z">32 bit variant</a> is <em>posix-dwarf</em>, and the <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-msvcrt-r6/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6.7z">64 bit variant</a> is <em>posix-seh</em>.<br>
 Since wxWidgets has no posix-dwarf releases, at least a personal build targeting 32 bit is required. I also went to build 64 bit libraries, even though there are posix-seh libraries at <a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.1.3">wxWidgets-3.1.3</a>, built by older MinGW-w64 GCC versions. Static libraries for Cairo 1.15.12 and MPIR 2.7.2 have been obtained from <a href="http://www.atelierweb.com/downloads/Mpfr315Mpir272.zip">atelierweb.com</a> and <a href="https://github.com/preshing/cairo-windows/releases/download/1.15.12/cairo-windows-1.15.12.zip">preshing/cairo-windows</a>, respectively.</p>
 <h3 id="wxwidgets-3-1-3">wxWidgets 3.1.3</h3>
 <p>Configuring commands for wxWidgets 3.1.3 that I executed in <a href="https://github.com/mintty/mintty">Mintty's Cygwin64 Terminal</a> while having the appropriate standalone MinGW-w64 compiler version installed:</p>
@@ -360,13 +359,13 @@ The following script does not only replace certain terms in all files in its dir
 </ul>
 <h4 id="walkthrough">Walkthrough</h4>
 <ol>
-<li>Put the MinGW-w64 <code>bin</code> folder path into the system environment variable 'Path', and remove all other paths of GCC versions.\
-For example, <code>C:/mingw-w64/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw32/bin</code> for 32 bit\
+<li>Put the MinGW-w64 <code>bin</code> folder path into the system environment variable 'Path', and remove all other paths of GCC versions.<br>
+For example, <code>C:/mingw-w64/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw32/bin</code> for 32 bit<br>
 and <code>C:/mingw-w64/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw64/bin</code> for 64 bit.</li>
 <li>Extract <a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxWidgets-3.1.3.7z">wxWidgets-3.1.3.7z</a> to <code>C:/wxWidgets-3.1.3</code>.</li>
 <li>Execute commands in Cygwin64 Terminal:<ul>
 <li><code>cd C:/wxWidgets-3.1.3</code></li>
-<li><code>./configure [...]</code> depending on the variant as noted above
+<li><code>./configure [...]</code> depending on the variant as noted above<br>
 My result of the configure command looked like:<pre><code>Which GUI toolkit should wxWidgets <span>use</span>?                 msw
 Should wxWidgets be <span>compiled</span> <span>into</span> single <span>library</span>?       <span>no</span>
 Should wxWidgets be linked <span>as</span> a <span>shared</span> <span>library</span>?         yes
@@ -391,7 +390,7 @@ Which libraries should wxWidgets <span>use</span>?
 <li>Copy <code>__replacer.sh</code> into <code>C:/wxWidgets-3.1.3</code> and execute it.</li>
 <li>Shut down Cygwin64 Terminal and open CMD, then execute commands:<ul>
 <li><code>cd C:/wxWidgets-3.1.3</code></li>
-<li><code>mingw32-make [...]</code> depending on the variant as noted above
+<li><code>mingw32-make [...]</code> depending on the variant as noted above<br>
 The process should successfully build all the binaries.</li>
 </ul>
 </li>
