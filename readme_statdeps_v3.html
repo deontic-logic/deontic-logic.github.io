@@ -1,0 +1,377 @@
+﻿<html><head>
+<meta charset="UTF-8">
+<title>README</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/**
+ * Gained from https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/style.css (partly modified)
+ */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    box-sizing: border-box;
+  color: #111;
+  background-color: #fff;
+  padding: 30px;
+}
+body > #content {
+  margin: 0px;
+  max-width: 900px;
+  border: 1px solid #e1e4e8;
+  padding: 10px 40px;
+  padding-bottom: 20px;
+  border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+hr {
+  color: #bbb;
+  background-color: #bbb;
+  height: 1px;
+  flex: 0 1 auto;
+  margin: 1em 0;
+  padding: 0;
+  border: none;
+}
+a {
+  color: #0366d6;
+  text-decoration: none; }
+  a:visited {
+    color: #0366d6; }
+  a:hover {
+    color: #0366d6;
+    text-decoration: underline; }
+pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  word-wrap: break-word;
+  padding: .2em .4em;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+}
+pre > code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+blockquote {
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 16px;
+  border-left-width: 3px;
+  padding: 0 1em;
+  color: #828282;
+  border-left: 4px solid #e8e8e8;
+  padding-left: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+}
+blockquote * {
+  font-style: normal !important;
+  letter-spacing: 0;
+  color: #6a737d !important;
+}
+table {
+    width: max-content;
+    max-width: 100%;
+  line-height: 1.5;
+  border-spacing: 3px;
+  display: block;
+  overflow: auto;
+  margin-bottom: 16px;
+  border-collapse: collapse;
+}
+td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+th {
+  font-weight: 600;
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+img {
+  max-width: 100%;
+}
+p {
+  line-height: 24px;
+  font-size: 16px;
+  color: #24292e; }
+ul {
+  margin-top: 0; }
+li {
+  color: #24292e;
+  font-size: 16px;
+  line-height: 1.5; }
+li + li {
+  margin-top: 0.25em; }
+a:visited {
+  color: #0366d6; }
+h1, h2 {
+  border-bottom: 1px solid #eaecef;
+  color: #111; }
+
+/**
+ * Gained from analysis in Mozilla Firefox inspector
+ */
+.markdown-container {
+    max-width: 1214px;
+    margin: auto;
+    background-color: #fff);
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+}
+#readme {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+img {
+    border-style: none;
+    box-sizing: initial;
+    background-color: #fff;
+    margin-left: 0;
+    margin-right: 0;
+}
+img[align="left"] {
+    padding-right: 20px;
+}
+img[align=right] {
+    padding-left:20px;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+h1, h2 {
+    padding-bottom: .3em;
+}
+h3 {
+    font-size: 1.25em;
+}
+ol, ul {
+    padding-left: 2em;
+}
+ol ol, ul ol {
+    list-style-type: lower-roman;
+}
+ol ol ol, ol ul ol, ul ol ol, ul ul ol {
+    list-style-type: lower-alpha;
+}
+li br {
+    box-sizing: border-box;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+b, strong {
+    font-weight: 600;
+}
+</style>
+
+<style id="savepage-cssvariables">
+  :root {
+  }
+</style>
+<script id="savepage-shadowloader" type="application/javascript">
+  "use strict";
+  window.addEventListener("DOMContentLoaded",
+  function(event) {
+    savepage_ShadowLoader(5);
+  },false);
+  function savepage_ShadowLoader(c){createShadowDOMs(0,document.documentElement);function createShadowDOMs(a,b){var i;if(b.localName=="iframe"||b.localName=="frame"){if(a<c){try{if(b.contentDocument.documentElement!=null){createShadowDOMs(a+1,b.contentDocument.documentElement)}}catch(e){}}}else{if(b.children.length>=1&&b.children[0].localName=="template"&&b.children[0].hasAttribute("data-savepage-shadowroot")){b.attachShadow({mode:"open"}).appendChild(b.children[0].content);b.removeChild(b.children[0]);for(i=0;i<b.shadowRoot.children.length;i++)if(b.shadowRoot.children[i]!=null)createShadowDOMs(a,b.shadowRoot.children[i])}for(i=0;i<b.children.length;i++)if(b.children[i]!=null)createShadowDOMs(a,b.children[i])}}}
+</script>
+<meta name="savepage-url" content="https://github.com/deontic-logic/proof-tool/blob/master/README_statdeps_v3.html">
+<meta name="savepage-title" content="README">
+<meta name="savepage-pubdate" content="Unknown">
+<meta name="savepage-from" content="https://github.com/deontic-logic/proof-tool/blob/master/README_statdeps_v3.html">
+<meta name="savepage-date" content="Thu Mar 31 2022 10:18:39 GMT+0200 (Mitteleuropäische Sommerzeit)">
+<meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
+<meta name="savepage-version" content="27.3">
+<meta name="savepage-comments" content="">
+  </head>
+<body><div class="markdown-container ltr"><div id="readme"><img data-savepage-currentsrc="https://github.com/deontic-logic/proof-tool/blob/master/icon/icon-readme.png" data-savepage-src="icon/icon-readme.png" src="data:image/png;base64,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" align="left">
+<h1 id="deontic-logic-proof-tool-releases-statdeps_v3">@deontic-logic/proof-tool/releases/statdeps_v3</h1>
+<p>Static libraries of Cairo 1.16.0, GMP 6.1.2 and wxWidgets 3.1.3, for MinGW-w64 GCC compiler.</p>
+<ul>
+<li>Tested and confirmed to work with up to <a href="https://github.com/brechtsanders/winlibs_mingw/releases/tag/11.2.0-9.0.0-msvcrt-r6">GCC 11.2.0 + MinGW-w64 9.0.0 MSVCRT (release 6)</a>.</li>
+<li>Built for MSVCRT. Make sure to never mix with binaries built to use UCRT.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<ol>
+<li>Extract the archive's contents to a folder <code>${LIBS_HOME}</code>. (The archives share files and folders but have no conflicts.)</li>
+<li>As GCC C++ Compiler options, add the appropriate include paths using <code>-I</code> flags.</li>
+<li>As MinGW C++ Linker options, add the appropriate library search paths using <code>-L</code> flags, and the required libraries using <code>-l</code> flags.</li>
+</ol>
+<h3 id="include-path-options">Include Path Options</h3>
+<ul>
+<li>Cairo 1.16.0<ul>
+<li><code>-I${LIBS_HOME}/cairo-1.16.0/include</code></li>
+</ul>
+</li>
+<li>GMP 6.1.2<ul>
+<li><code>-I${LIBS_HOME}/gmp-6.1.2/include</code></li>
+</ul>
+</li>
+<li>wxWidgets 3.1.3<ul>
+<li>32 bit<ul>
+<li><code>-I${LIBS_HOME}/wxWidgets-3.1.3/lib/wx/include/msw-unicode-static-3.1</code></li>
+</ul>
+</li>
+<li>64 bit<ul>
+<li><code>-I${LIBS_HOME}/wxWidgets-3.1.3/lib/wx/include/msw-unicode-static-3.1_x64</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="library-search-path-options">Library Search Path Options</h3>
+<ul>
+<li>Cairo 1.16.0<ul>
+<li>32 bit<ul>
+<li><code>-L${LIBS_HOME}/cairo-1.16.0/lib/i386</code></li>
+</ul>
+</li>
+<li>64 bit<ul>
+<li><code>-L${LIBS_HOME}/cairo-1.16.0/lib/x64</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GMP 6.1.2<ul>
+<li>32 bit<ul>
+<li><code>-L${LIBS_HOME}/gmp-6.1.2/lib/i386</code></li>
+</ul>
+</li>
+<li>64 bit<ul>
+<li><code>-L${LIBS_HOME}/gmp-6.1.2/lib/x64</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>wxWidgets 3.1.3<ul>
+<li><code>-L${LIBS_HOME}/wxWidgets-3.1.3/lib</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="library-include-options">Library Include Options</h3>
+<ul>
+<li>32 bit release<ul>
+<li><code>-lgmp -lcairo -lpixman-1 -lfreetype -lpng -lharfbuzz -lbz2 -lwx_mswu-3.1 -lwxpng-3.1 -lwxzlib-3.1 -lwxscintilla-3.1 -luxtheme -limm32 -lz -lrpcrt4 -loleaut32 -lole32 -luuid -loleacc -lwinspool -lwinmm -lshell32 -lshlwapi -lcomctl32 -lcomdlg32 -ladvapi32 -lversion -lwsock32 -lgdi32</code></li>
+</ul>
+</li>
+<li>32 bit debug<ul>
+<li><code>-lgmp -lcairo -lpixman-1 -lfreetype -lpng -lharfbuzz -lbz2 -lwx_mswu-3.1d -lwxpng-3.1d -lwxzlib-3.1d -lwxscintilla-3.1d -luxtheme -limm32 -lz -lrpcrt4 -loleaut32 -lole32 -luuid -loleacc -lwinspool -lwinmm -lshell32 -lshlwapi -lcomctl32 -lcomdlg32 -ladvapi32 -lversion -lwsock32 -lgdi32</code></li>
+</ul>
+</li>
+<li>64 bit release<ul>
+<li><code>-lgmp -lcairo -lpixman-1 -lfreetype -lpng -lharfbuzz -lbz2 -lwx_mswu-3.1_x64 -lwxpng-3.1_x64 -lwxzlib-3.1_x64 -lwxscintilla-3.1_x64 -luxtheme -limm32 -lz -lrpcrt4 -loleaut32 -lole32 -luuid -loleacc -lwinspool -lwinmm -lshell32 -lshlwapi -lcomctl32 -lcomdlg32 -ladvapi32 -lversion -lwsock32 -lgdi32</code></li>
+</ul>
+</li>
+<li>64 bit debug<ul>
+<li><code>-lgmp -lcairo -lpixman-1 -lfreetype -lpng -lharfbuzz -lbz2 -lwx_mswu-3.1d_x64 -lwxpng-3.1d_x64 -lwxzlib-3.1d_x64 -lwxscintilla-3.1d_x64 -luxtheme -limm32 -lz -lrpcrt4 -loleaut32 -lole32 -luuid -loleacc -lwinspool -lwinmm -lshell32 -lshlwapi -lcomctl32 -lcomdlg32 -ladvapi32 -lversion -lwsock32 -lgdi32</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="build">Build</h2>
+<p>I have built <a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.1.3">wxWidgets 3.1.3</a> on my own and obtained compatible static libraries for Cairo 1.16.0 and GMP 6.1.2 from <a href="https://github.com/rwinlib/cairo/releases/tag/v1.16.0">rwinlib/cairo</a> and <a href="https://github.com/rwinlib/gmp/releases/tag/v6.1.2">rwinlib/gmp</a>, respectively.\
+Utilized compilers were taken from <a href="https://github.com/brechtsanders/winlibs_mingw/releases/tag/11.2.0-9.0.0-msvcrt-r6">GCC 11.2.0 + MinGW-w64 9.0.0 MSVCRT (release 6)</a>. These are <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-msvcrt-r6/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6.7z">posix-dwarf-gcc-11.2.0</a> for 32 bit and <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-msvcrt-r6/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6.7z">posix-seh-gcc-11.2.0</a> for 64 bit.</p>
+<h3 id="wxwidgets-3-1-3">wxWidgets 3.1.3</h3>
+<p>Configuring commands for wxWidgets 3.1.3 that I executed in <a href="https://github.com/mintty/mintty">Mintty's Cygwin64 Terminal</a> while having the appropriate standalone MinGW-w64 compiler version installed:</p>
+<ul>
+<li><p>32 bit</p>
+<ul>
+<li><code>./configure CC=C:/mingw-w64/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw32/bin/gcc CXX=C:/mingw-w64/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw32/bin/g++ --disable-shared --enable-monolithic --with-expat=builtin --with-libpng=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-zlib=builtin --disable-dependency-tracking</code></li>
+</ul>
+</li>
+<li><p>64 bit</p>
+<ul>
+<li><code>./configure CC=C:/mingw-w64/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw64/bin/gcc CXX=C:/mingw-w64/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw64/bin/g++ --disable-shared --enable-monolithic --with-expat=builtin --with-libpng=builtin --with-libjpeg=builtin --with-libtiff=builtin --with-zlib=builtin --disable-dependency-tracking</code></li>
+</ul>
+</li>
+</ul>
+<p>For debug builds, <code>--enable-debug</code> must be appended. Then for both 32 bit and 64 bit, the static libraries can be built using</p>
+<pre><code>mingw32-make -j4 BUILD=<span>release</span> <span>UNICODE</span>=<span>1</span> <span>SHARED</span>=<span>0</span> MONOLITHIC=<span>1</span>
+</code></pre><p>for release builds, and</p>
+<pre><code>mingw32-<span>make</span> -j4 BUILD=<span>debug</span> UNICODE=<span>1</span> SHARED=<span>0</span> MONOLITHIC=<span>1</span>
+</code></pre><p>for debug builds.</p>
+<h4 id="walkthrough">Walkthrough</h4>
+<ol>
+<li>Put the MinGW-w64 <code>bin</code> folder path into the system environment variable 'Path', and remove all other paths of GCC versions.\
+For example, <code>C:/mingw-w64/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw32/bin</code> for 32 bit\
+and <code>C:/mingw-w64/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6/mingw64/bin</code> for 64 bit.</li>
+<li>Extract <a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxWidgets-3.1.3.7z">wxWidgets-3.1.3.7z</a> to <code>C:/wxWidgets-3.1.3</code>.</li>
+<li>Execute commands in Cygwin64 Terminal:<ul>
+<li><code>cd C:/wxWidgets-3.1.3</code></li>
+<li><code>./configure [...]</code> depending on the variant as noted above
+My result of the configure command looked like:<pre><code>Which GUI toolkit should wxWidgets <span>use</span>?                 msw
+Should wxWidgets be <span>compiled</span> <span>into</span> single <span>library</span>?       yes
+Should wxWidgets be linked <span>as</span> a <span>shared</span> <span>library</span>?         <span>no</span>
+Should wxWidgets support <span>Unicode</span>?                       yes (<span>using</span> wchar_t)
+What <span>level</span> <span>of</span> wxWidgets <span>compatibility</span> should be enabled?
+                                 wxWidgets <span>2.8</span>      <span>no</span>
+                                 wxWidgets <span>3.0</span>      yes
+Which libraries should wxWidgets <span>use</span>?
+                                 STL                <span>no</span>
+                                 jpeg               builtin
+                                 png                builtin
+                                 regex              builtin
+                                 tiff               builtin
+                                 lzma               <span>no</span>
+                                 zlib               builtin
+                                 expat              builtin
+                                 libmspack          <span>no</span>
+                                 sdl                <span>no</span>
+</code></pre></li>
+</ul>
+</li>
+<li>In <code>./Makefile</code>, change <code>wx_top_builddir = /cygdrive/c/wxWidgets-3.1.3</code> to <code>wx_top_builddir = C:/wxWidgets-3.1.3</code>.</li>
+<li>Execute command in Cygwin64 Terminal:<ul>
+<li><code>mingw32-make [...]</code> depending on the variant as noted above
+The process terminates with an error <code>mingw32-make: *** [makefile:14768: wxrc] Error 2</code>, but built all the static libraries already.</li>
+</ul>
+</li>
+<li>Rename all the generated <code>&lt;name&gt;.a</code> files to<ul>
+<li>32 bit debug<ul>
+<li><code>&lt;name&gt;d.a</code></li>
+</ul>
+</li>
+<li>64 bit release<ul>
+<li><code>&lt;name&gt;_x64.a</code></li>
+</ul>
+</li>
+<li>64 bit debug<ul>
+<li><code>&lt;name&gt;d_x64.a</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For 64 bit, in <code>./lib/wx/include</code>, rename the generated folder <code>msw-unicode-static-3.1</code> to <code>msw-unicode-static-3.1_x64</code>.</li>
+</ol>
+</div></div>
+</body></html>
