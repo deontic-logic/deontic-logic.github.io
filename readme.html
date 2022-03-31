@@ -1,5 +1,4 @@
-﻿<!-- This file has been archived at 29 Mar 2022 06:04:09 to https://web.archive.org/web/20220329060409/https://deontic-logic.github.io/readme.html -->
-<html><head>
+﻿<html><head>
 <meta charset="UTF-8">
 <title>README</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -217,7 +216,7 @@ b, strong {
 <meta name="savepage-title" content="README">
 <meta name="savepage-pubdate" content="Unknown">
 <meta name="savepage-from" content="https://github.com/deontic-logic/proof-tool/blob/master/README.html">
-<meta name="savepage-date" content="Tue Mar 29 2022 07:43:56 GMT+0200 (Mitteleuropäische Sommerzeit)">
+<meta name="savepage-date" content="Thu Mar 31 2022 09:20:55 GMT+0200 (Mitteleuropäische Sommerzeit)">
 <meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
 <meta name="savepage-version" content="27.3">
 <meta name="savepage-comments" content="">
@@ -282,7 +281,7 @@ b, strong {
 <p>Each file is released as stated in a file named <code>LICENSE</code> that is contained in the closest directory which also contains said file. That is, direct contributions to this repository are released under the <a href="https://github.com/deontic-logic/proof-tool/blob/master/LICENSE" title="View LICENSE">GNU Lesser General Public License v3.0</a>, but whenever third-party code is made part of the project, the original license of the author applies. In all such cases the original license requires to be at least as permissible as LGPLv3, so that for binaries of <strong>proof-tool</strong>, all the LGPLv3 permissions, restrictions and conditions apply. For example, while all files in <a data-savepage-href="./nortmann" href="https://github.com/deontic-logic/proof-tool/blob/master/nortmann">nortmann/</a> adapt the LGPLv3 license from their parent directory, all files in <a data-savepage-href="./svgren" href="https://github.com/deontic-logic/proof-tool/blob/master/svgren">svgren/</a> are kept under their original <a href="https://github.com/deontic-logic/proof-tool/blob/master/svgren/LICENSE" title="View svgren/LICENSE">MIT license</a>.</p>
 <h2 id="dependencies">Dependencies</h2>
 <ul>
-<li>wxWidgets 3.1 (verified: <a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.1.0">v3.1.0</a>, <a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.1.4">v3.1.4</a> ; license: <a href="https://github.com/wxWidgets/wxWidgets/blob/master/docs/licence.txt">wxWindows Library Licence v3.1</a>)</li>
+<li>wxWidgets 3.1 (verified: <a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.1.2">v3.1.2</a>, <a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.1.3">v3.1.3</a> ; license: <a href="https://github.com/wxWidgets/wxWidgets/blob/master/docs/licence.txt">wxWindows Library Licence v3.1</a> ; <strong>deficient</strong>: v3.1.4, v3.1.5)</li>
 <li>Boost.Algorithm (header-only ; verified: <a href="https://www.boost.org/users/history/version_1_74_0.html">v1.74.0</a> ; license: <a href="https://www.boost.org/users/license.html">Boost Software License v1.0</a>)</li>
 <li>Boost.Iostreams (see above)</li>
 <li>Boost.Multiprecision (see above)<ul>
@@ -295,7 +294,7 @@ b, strong {
 <p>When using GCC for compilation, another dependency is the <em>GNU C++ Library</em>, <a href="https://gcc.gnu.org/onlinedocs/libstdc++/faq.html#faq.license.any_program">licensed</a> under <a href="https://www.gnu.org/licenses/gcc-exception-3.1.en.html">GCC Runtime Library Exception v3.1</a>.</p>
 <p>Note that all dependencies have licenses permissible enough to make static linking an option when publishing under LGPLv3.</p>
 <h2 id="building">Building</h2>
-<p><a href="https://www.eclipse.org/cdt">Eclipse CDT</a> project files which contain all the build settings that are exemplary used in the following have been released at <a href="https://github.com/deontic-logic/proof-tool/releases/download/results_v1/EclipseProjectData.7z">releases/results_v1/EclipseProjectData.7z</a>.</p>
+<p><a href="https://www.eclipse.org/cdt">Eclipse CDT</a> project files which contain all the build settings that are exemplary used in the following have been released at <a href="https://github.com/deontic-logic/proof-tool/releases/download/results_v2/EclipseProjectData.7z">releases/results_v2/EclipseProjectData.7z</a>.</p>
 <p>Since the Boost libraries are header-only, there are only 3 dependencies which require binaries:</p>
 <ol>
 <li>wxWidgets</li>
@@ -304,9 +303,10 @@ b, strong {
 </ol>
 <p>I have only built <strong>proof-tool</strong> on Windows, using standalone builds of GCC and MinGW-w64 as compilers, such as available on <a data-savepage-href="http://winlibs.com" href="http://winlibs.com/">winlibs.com</a>.
 Since the dependencies tend to be created for building on Linux, I expect that to be far easier on Linux distributions since the dependencies can be 'just built' and used. This is not the case on Windows systems. One typically relies on binaries that were cross compiled for Windows or on people who write building scripts that actually work on Windows systems.</p>
-<p>However, in order to link statically (e.g. to build a standalone binary), one must have static libraries of the dependencies that are compatible with the used compiler, which means the static libraries have to be built by the same compiler in a similar version. This usually means, in order to link statically, one has to also build some of the dependencies. Due to oddities with the <a href="https://github.com/wxWidgets/wxWidgets/releases">officially released</a> wxWidgets dynamic-link libraries, linking dynamically also comes with such drawbacks since unmatching compiler versions compile executables that crash on runtime with these DLLs. (Whether the crash happens on startup or only on exit depends on the exact DLL and compiler versions used.)</p>
+<p>However, in order to link statically (e.g. to build a standalone binary), one must have static libraries of the dependencies that are compatible with the used compiler, which means the static libraries have to be built by the same compiler in a similar version. This usually means, in order to link statically, one has to also build some of the dependencies.</p>
 <h3 id="building-on-windows">Building on Windows</h3>
-<p>When writing this, the sole source of recent GCC compilers released for Windows known to me is <a href="https://github.com/brechtsanders/winlibs_mingw">brechtsanders/winlibs_mingw</a>, most recently <a href="https://github.com/brechtsanders/winlibs_mingw/releases/tag/10.2.0-10.0.1-8.0.0-r1">GCC 10.2.0 + MinGW-w64 8.0.0 (release 1)</a> (<a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/10.2.0-10.0.1-8.0.0-r1/winlibs-i686-posix-dwarf-gcc-10.2.0-mingw-w64-8.0.0-r1.7z">32 bit</a>, <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/10.2.0-10.0.1-8.0.0-r1/winlibs-x86_64-posix-seh-gcc-10.2.0-mingw-w64-8.0.0-r1.7z">64 bit</a>). I don't know whether or how <strong>proof-tool</strong> can be built with MSVC, but I am free to publish tutorials that I receive from people who figure it out. (The same goes for different plattforms.)</p>
+<p>When writing this, the sole source of recent GCC compilers released for Windows known to me is <a href="https://github.com/brechtsanders/winlibs_mingw">brechtsanders/winlibs_mingw</a>, most recently <a href="https://github.com/brechtsanders/winlibs_mingw/releases/tag/11.2.0-9.0.0-msvcrt-r6">GCC 11.2.0 + MinGW-w64 9.0.0 MSVCRT (release 6)</a> (<a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-msvcrt-r6/winlibs-i686-posix-dwarf-gcc-11.2.0-mingw-w64-9.0.0-r6.7z">32 bit</a>, <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-9.0.0-msvcrt-r6/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6.7z">64 bit</a>). I don't know whether or how <strong>proof-tool</strong> can be built with MSVC, but I am free to publish tutorials that I receive from people who figure it out. (The same goes for different plattforms.)</p>
+<p>I managed to build and test wxWidgets versions 3.1.0 up to 3.1.5 with MinGW-w64. For wxWidgets 3.1.0 and 3.1.1, there are missing features leading to undesired behaviour, and wxWidgets 3.1.4 and 3.1.5 have significant rendering performance issues for wxGrid components on MSW, making them useless for Windows builds. Therefore, at this moment where 3.1.5 is the most recent wxWidgets version, only wxWidgets 3.1.2 and 3.1.3 are suitable.</p>
 <h4 id="unix-like-environment-on-windows">Unix-like Environment on Windows</h4>
 <p>It has proven useful to me to make shell scripts – <code>.sh</code> files designed to run on Unix terminals – applicable on Windows. For that, I installed <a data-savepage-href="https://mintty.github.io" href="https://mintty.github.io/">Mintty — Cygwin Terminal emulator</a> and executed the following in a registry (<code>.reg</code>) file:</p>
 <pre><code>Windows Registry Editor Version 5.00
@@ -315,90 +315,10 @@ Since the dependencies tend to be created for building on Linux, I expect that t
 ; This is a simple registry file to automate the execution of sh via cygwin on Windows 7, might work on other Windows versions ... I did not <span>test</span>.
 </code></pre><p>Note that CR LF is not a valid line ending in <code>.sh</code> files. There are editors such as <a data-savepage-href="https://notepad-plus-plus.org" href="https://notepad-plus-plus.org/">Notepad++</a> to properly view and edit them on Windows.</p>
 <h4 id="static-build-on-windows-preliminaries">Static Build on Windows: Preliminaries</h4>
-<p>Static libraries sufficient to create both 32 bit and 64 bit standalones are provided at <a href="https://github.com/deontic-logic/proof-tool/releases/tag/statdeps_v1">releases/statdeps_v1</a>, which includes building instructions.</p>
-<p>I failed to build more recent wxWidgets versions than 3.1.0 with MinGW-w64 so far.</p>
+<p>Static libraries sufficient to create both 32 bit and 64 bit standalone binaries are provided at <a href="https://github.com/deontic-logic/proof-tool/releases/tag/statdeps_v3">releases/statdeps_v3</a>, which includes building instructions.</p>
 <h4 id="dynamic-build-on-windows-preliminaries">Dynamic Build on Windows: Preliminaries</h4>
-<p>Compatible dynamic libraries can be found:</p>
-<ol>
-<li><a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.1.4">wxWidgets 3.1.4</a><ul>
-<li>32 bit: <a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxMSW-3.1.4_gcc920TDM_Dev.7z">wxMSW-3.1.4_gcc920TDM_Dev.7z</a></li>
-<li>64 bit: <a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxMSW-3.1.4_gcc810_x64_Dev.7z">wxMSW-3.1.4_gcc810_x64_Dev.7z</a></li>
-</ul>
-</li>
-<li><a href="http://www.atelierweb.com/mpir-and-mpfr">MPIR 2.7.2</a><ul>
-<li><a href="http://www.atelierweb.com/downloads/Mpfr315Mpir272.zip">Mpfr315Mpir272.zip</a></li>
-</ul>
-</li>
-<li><a href="https://github.com/preshing/cairo-windows/releases/tag/1.15.12">Cairo 1.15.12</a><ul>
-<li><a href="https://github.com/preshing/cairo-windows/releases/download/1.15.12/cairo-windows-1.15.12.zip">cairo-windows-1.15.12.zip</a></li>
-</ul>
-</li>
-</ol>
-<p>Only the following GCC based libraries are released as part of wxWidgets 3.1.4 (I did not consider VC variants):</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">GCC Version</th>
-<th style="text-align:center">Targeted CPU Bus Width</th>
-<th style="text-align:center">Thread Interface</th>
-<th style="text-align:center">Exception Handling System</th>
-<th>Identifier</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">7.3.0</td>
-<td style="text-align:center">32 bit</td>
-<td style="text-align:center">Win32</td>
-<td style="text-align:center">SJLJ</td>
-<td><a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxMSW-3.1.4_gcc730_Dev.7z">gcc730</a></td>
-</tr>
-<tr>
-<td style="text-align:center">7.3.0</td>
-<td style="text-align:center">64 bit</td>
-<td style="text-align:center">Win32</td>
-<td style="text-align:center">SEH</td>
-<td><a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxMSW-3.1.4_gcc730_x64_Dev.7z">gcc730_x64</a></td>
-</tr>
-<tr>
-<td style="text-align:center">8.1.0</td>
-<td style="text-align:center">32 bit</td>
-<td style="text-align:center">Win32</td>
-<td style="text-align:center">SJLJ</td>
-<td><a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxMSW-3.1.4_gcc810_Dev.7z">gcc810</a></td>
-</tr>
-<tr>
-<td style="text-align:center">8.1.0</td>
-<td style="text-align:center">64 bit</td>
-<td style="text-align:center">Win32</td>
-<td style="text-align:center">SEH</td>
-<td><a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxMSW-3.1.4_gcc810_x64_Dev.7z">gcc810_x64</a></td>
-</tr>
-<tr>
-<td style="text-align:center">9.2.0</td>
-<td style="text-align:center">32 bit</td>
-<td style="text-align:center">POSIX</td>
-<td style="text-align:center">SJLJ</td>
-<td><a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxMSW-3.1.4_gcc920TDM_Dev.7z">gcc920TDM</a></td>
-</tr>
-<tr>
-<td style="text-align:center">9.2.0</td>
-<td style="text-align:center">64 bit</td>
-<td style="text-align:center">POSIX</td>
-<td style="text-align:center">SEH</td>
-<td><a href="https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxMSW-3.1.4_gcc920TDM_x64_Dev.7z">gcc920TDM_x64</a></td>
-</tr>
-</tbody>
-</table>
-<p>There are several issues with these.</p>
-<ul>
-<li>Mixing different exception systems leads to termination instead of handling exceptions, so we shall not mix them.</li>
-<li>The <strong>posix-sjlj</strong> seems generally unable to combine with a WinLibs compiler and  mpir32.dll at once (but all non-WinLibs GCC releases known to me are low-version).</li>
-<li>The only <strong>posix-seh</strong> seems to be incompatible with some of the other chosen DLLs (such that the app crashes on exit, even when using <a href="https://jmeubank.github.io/tdm-gcc">TDM-GCC</a> itself as a compiler), or corrupted, so we cannot use it at all.</li>
-<li>The <strong>win32-seh</strong> versions have compatibility issues with mpir64.dll when using a WinLibs version lower than <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/10.2.0-7.0.0-r2/winlibs-x86_64-posix-seh-gcc-10.2.0-mingw-w64-7.0.0-r2.7z">GCC 10.2.0 + MinGW-w64 7.0.0 (release 2)</a> (fortunately they fit together for higher versions).</li>
-<li>There is currently only one recent SJLJ capable WinLibs release, and it is not compatible with the <strong>win32-sjlj</strong> versions. TDM-GCC provides the most recent alternative with SJLJ that I found.</li>
-</ul>
-<p>Using POSIX threads while linking towards native Win32 thread libraries seems to work fine. But due to all the issues I have encountered with data-link libraries, I would not recommend using them if you prefer to run a stable program. For example, having some DLLs missing while an inadequate version is still loaded by the system (e.g. when an equally named library occurs in the PATH system environment variable) can cause confusion. For such issues I recommend using shell scripts like</p>
+<p>Compatible dynamic libraries and building instructions are provided at <a href="https://github.com/deontic-logic/proof-tool/releases/tag/dyndeps_1">releases/dyndeps_1</a>. There are no official wxWidgets 3.1.3 <em>posix-dwarf</em> (32 bit) MinGW-w64-compatible releases, so I built them myself. The process also worked for wxWidgets 3.1.3 <em>posix-seh</em> (64 bit) binaries, which are thereby available as custom builds as well.</p>
+<p>For dynamic builds, I recommend to always have the required DLLs (including those shipped by the compiler) present in the directory of the executable. For example, having some DLLs missing while an inadequate version is still loaded by the system (e.g. when an equally named library occurs in the PATH system environment variable) can cause confusion. For such issues I recommend using shell scripts like</p>
 <pre><code>objdump -<span>p</span> ProofTool.<span>exe</span> | <span>grep</span> <span>"DLL Name"</span>
 </code></pre><p>to list dependencies of an .exe or .dll file, or</p>
 <pre><code>IFS=:
@@ -406,27 +326,18 @@ Since the dependencies tend to be created for building on Linux, I expect that t
 find <span>"<span>$p</span>/"</span> -maxdepth 1 -name <span>'libstdc++-6.dll'</span>
 <span>done</span>
 </code></pre><p>to locate redundant libraries. (I explained how to use shell scripts on Windows under <a href="#unix-like-environment-on-windows">Unix-like Environment on Windows</a>.)</p>
-<p>For 32 bit I matched <strong>gcc920TDM</strong> with compiler <a href="https://github.com/jmeubank/tdm-gcc/releases/download/v9.2.0-tdm-1/tdm-gcc-9.2.0.exe">TDM-GCC-32 9.2.0</a>, and for 64 bit I matched <strong>gcc810_x64</strong> with the currently most recent WinLibs compiler <a href="https://github.com/brechtsanders/winlibs_mingw/releases/download/10.2.0-10.0.1-8.0.0-r1/winlibs-x86_64-posix-seh-gcc-10.2.0-mingw-w64-8.0.0-r1.7z">GCC 10.2.0 + MinGW-w64 8.0.0 (release 1)</a>. Note that using only GCC 9.2.0 for 32 bit comes with the drawback that only <code>-std=c++17 -fconcepts</code> can be used as a dialect, rather than <code>-std=c++20</code>.</p>
 <h3 id="gcc-compiler-options">GCC Compiler Options</h3>
 <p>Include paths vary when using dependencies of different versions, or when not on a Windows system. The options given below are correct when following the instructions from <a href="#static-build-on-windows-preliminaries">Static Build on Windows: Preliminaries</a> or <a href="#dynamic-build-on-windows-preliminaries">Dynamic Build on Windows: Preliminaries</a>.</p>
 <p>Consider <code>${PROJECT_HOME}</code> the path of <strong>proof-tool</strong>'s home folder, and <code>${LIBS_HOME}</code> a path where dependencies are stored. I use Eclipse, which is able to directly access these variables as defined under <strong>Project -&gt; Properties -&gt; C/C++ Build -&gt; Environment</strong>. Say <code>${INCLUDES}</code> is defined as follows (though that is done implicitly by Eclipse when just defining the include paths under <strong>Project -&gt; Properties -&gt; C/C++ Build -&gt; Settings -&gt; GCC C++ Compiler -&gt; Includes</strong>).</p>
 <h4 id="include-paths">Include Paths</h4>
-<p>32 bit static release:</p>
-<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/gmp-<span>6.1</span>.<span>2</span>/<span>32</span>bit/<span>include</span> -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-<span>1.16</span>.<span>0</span>/<span>include</span>/cairo -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>0</span>/lib/wx/<span>include</span>/msw-unicode-static-<span>3.1</span> -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>0</span>/<span>include</span>
-</code></pre><p>64 bit static release:</p>
-<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/gmp-<span>6.1</span>.<span>2</span>/<span>64</span>bit/<span>include</span> -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-<span>1.16</span>.<span>0</span>/<span>include</span>/cairo -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>0</span>/lib/wx/<span>include</span>/msw-unicode-static-<span>3.1_</span>x64 -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>0</span>/<span>include</span>
-</code></pre><p>32 bit static debug:</p>
-<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/gmp-<span>6.1</span>.<span>2</span>/<span>32</span>bit/<span>include</span> -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-<span>1.16</span>.<span>0</span>/<span>include</span>/cairo -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>0</span>/lib/wx/<span>include</span>/msw-unicode-static-<span>3.1</span>d -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>0</span>/<span>include</span>
-</code></pre><p>64 bit static debug:</p>
-<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/gmp-<span>6.1</span>.<span>2</span>/<span>64</span>bit/<span>include</span> -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-<span>1.16</span>.<span>0</span>/<span>include</span>/cairo -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>0</span>/lib/wx/<span>include</span>/msw-unicode-static-<span>3.1</span>d_x64 -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>0</span>/<span>include</span>
-</code></pre><p>32 bit dynamic release:</p>
-<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Mpfr -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/<span>include</span> -I${LIBS_HOME}/wxMSW-<span>3.1</span>.<span>4_</span>gcc920TDM_Dev/lib/gcc920TDM_dll/mswu -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>4</span>/<span>include</span>
-</code></pre><p>64 bit dynamic release:</p>
-<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Mpfr -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/<span>include</span> -I${LIBS_HOME}/wxMSW-<span>3.1</span>.<span>4_</span>gcc810_x64_Dev/lib/gcc810_x64_dll/mswu -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>4</span>/<span>include</span>
-</code></pre><p>32 bit dynamic debug:</p>
-<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Mpfr -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/<span>include</span> -I${LIBS_HOME}/wxMSW-<span>3.1</span>.<span>4_</span>gcc920TDM_Dev/lib/gcc920TDM_dll/mswud -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>4</span>/<span>include</span>
-</code></pre><p>64 bit dynamic debug:</p>
-<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Mpfr -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/<span>include</span> -I${LIBS_HOME}/wxMSW-<span>3.1</span>.<span>4_</span>gcc810_x64_Dev/lib/gcc810_x64_dll/mswud -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>4</span>/<span>include</span>
+<p>32 bit static:</p>
+<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/gmp-<span>6.1</span>.<span>2</span>/<span>include</span> -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-<span>1.16</span>.<span>0</span>/<span>include</span>/cairo -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/lib/wx/<span>include</span>/msw-unicode-static-<span>3.1</span> -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/<span>include</span>
+</code></pre><p>64 bit static:</p>
+<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/gmp-<span>6.1</span>.<span>2</span>/<span>include</span> -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-<span>1.16</span>.<span>0</span>/<span>include</span>/cairo -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/lib/wx/<span>include</span>/msw-unicode-static-<span>3.1_</span>x64 -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/<span>include</span>
+</code></pre><p>32 bit dynamic:</p>
+<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Mpfr -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/<span>include</span> -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/lib/wx/<span>include</span>/msw-unicode-<span>3.1</span> -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/<span>include</span>
+</code></pre><p>64 bit dynamic:</p>
+<pre><code>-I${PROJECT_HOME}/svgren -I${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Mpfr -I${LIBS_HOME}/boost_1_74_<span>0</span>/<span>include</span> -I${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/<span>include</span> -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/lib/wx/<span>include</span>/msw-unicode-<span>3.1_</span>x64 -I${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/<span>include</span>
 </code></pre><p>Most of the following flags are up to taste. Consider them composed into <code>${COMPILER_SETTINGS}</code>.</p>
 <h4 id="compiler-settings">Compiler Settings</h4>
 <table>
@@ -476,23 +387,16 @@ find <span>"<span>$p</span>/"</span> -maxdepth 1 -name <span>'libstdc++-6.dll'</
 <td>32 bit, compilation only</td>
 </tr>
 <tr>
-<td style="text-align:center">dynamic</td>
 <td style="text-align:center">*</td>
-<td style="text-align:center">32 bit</td>
-<td>-std=c++17 -fconcepts</td>
-<td>C++17 standard with the <a href="https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-fconcepts">ISO 19217</a> C++20 parts (as C++20 is unavailable)</td>
-</tr>
-<tr>
-<td style="text-align:center">static</td>
-<td style="text-align:center">*</td>
-<td style="text-align:center">32 bit</td>
-<td>-std=c++20</td>
-<td>C++20 standard</td>
+<td style="text-align:center">debug</td>
+<td style="text-align:center"></td>
+<td>-Wa,-mbig-obj</td>
+<td>Allow big object files</td>
 </tr>
 <tr>
 <td style="text-align:center">*</td>
 <td style="text-align:center">*</td>
-<td style="text-align:center">64 bit</td>
+<td style="text-align:center">*</td>
 <td>-std=c++20</td>
 <td>C++20 standard</td>
 </tr>
@@ -508,36 +412,36 @@ find <span>"<span>$p</span>/"</span> -maxdepth 1 -name <span>'libstdc++-6.dll'</
 <p>Now the full compiler flags are</p>
 <pre><code><span>"<span>${SOURCE_GXX}</span>"</span> <span>${INCLUDES}</span> <span>${COMPILER_SETTINGS}</span> -o <span>"<span>${OBJ_DIR}</span><span>${FILE_NAME}</span>.o"</span> <span>"<span>${FILE_DIR}</span><span>${FILE_NAME}</span>.cpp"</span>
 </code></pre><p>to compile <code>${FILE_NAME}.cpp</code>. I prefer to use as <code>${SOURCE_GXX}</code> a full path to <code>g++</code>, so I do not have to care about $PATH settings. But again, this is up to taste. Here is an example instruction that Eclipse generated for me when building <code>Release64Bit</code>:</p>
-<pre><code><span>"C:\\mingw-w64\\winlibs-x86_64-posix-seh-gcc-10.2.0-mingw-w64-8.0.0-r1\\mingw64\\bin\\g++"</span> -ID:<span>/sciebo/</span>eclipse/ProofTool/svgren -ID:<span>/sciebo/</span>eclipse/gmp<span>-6.1</span><span>.2</span>/<span>64</span>bit/include -ID:<span>/sciebo/</span>eclipse/boost_1_74_0/include -ID:<span>/sciebo/</span>eclipse/cairo<span>-1.16</span><span>.0</span>/include/cairo -ID:<span>/sciebo/</span>eclipse/wxWidgets<span>-3.1</span><span>.0</span>/lib/wx/include/msw-unicode-<span>static</span><span>-3.1</span>_x64 -ID:<span>/sciebo/</span>eclipse/wxWidgets<span>-3.1</span><span>.0</span>/include -O3 -fno-align-functions -fno-align-jumps -fno-align-loops -fno-align-labels -Wall -c -m64 -fmessage-length=<span>0</span> -std=c++<span>20</span> -D_FILE_OFFSET_BITS=<span>64</span> -D__WXMSW__ -o main.o <span>"..\\main.cpp"</span>
+<pre><code><span>"C:\\mingw-w64\\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6\\mingw64\\bin\\g++"</span> -ID:<span>/Dropbox/</span>eclipse/ProofTool/svgren -ID:<span>/Dropbox/</span>eclipse/gmp<span>-6.1</span><span>.2</span>/include -ID:<span>/Dropbox/</span>eclipse/boost_1_74_0/include -ID:<span>/Dropbox/</span>eclipse/cairo<span>-1.16</span><span>.0</span>/include/cairo -ID:<span>/Dropbox/</span>eclipse/wxWidgets<span>-3.1</span><span>.3</span>/lib/wx/include/msw-unicode-<span>static</span><span>-3.1</span>_x64 -ID:<span>/Dropbox/</span>eclipse/wxWidgets<span>-3.1</span><span>.3</span>/include -O3 -fno-align-functions -fno-align-jumps -fno-align-loops -fno-align-labels -Wall -c -m64 -fmessage-length=<span>0</span> -std=c++<span>20</span> -D_FILE_OFFSET_BITS=<span>64</span> -D__WXMSW__ -o main.o <span>"..\\main.cpp"</span>
 </code></pre><h3 id="gcc-linker-options">GCC Linker Options</h3>
 <p>Again, I will just exemplary show what worked for me on a Windows system. Take <code>${LIBRARY_PATHS}</code> as a composition of the suitable paths where the libraries can be found in binary form.</p>
 <h4 id="library-search-paths">Library Search Paths</h4>
 <p>32 bit static:</p>
-<pre><code>-L${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>0</span>/lib -L${LIBS_HOME}/cairo-<span>1.16</span>.<span>0</span>/lib/i386 -L${LIBS_HOME}/gmp-<span>6.1</span>.<span>2</span>/<span>32</span>bit/lib
+<pre><code>-L${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/lib -L${LIBS_HOME}/cairo-<span>1.16</span>.<span>0</span>/lib/i386 -L${LIBS_HOME}/gmp-<span>6.1</span>.<span>2</span>/lib/i386
 </code></pre><p>64 bit static:</p>
-<pre><code>-L${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>0</span>/lib -L${LIBS_HOME}/cairo-<span>1.16</span>.<span>0</span>/lib/x64 -L${LIBS_HOME}/gmp-<span>6.1</span>.<span>2</span>/<span>64</span>bit/lib
-</code></pre><p>32 bit dynamic:</p>
-<pre><code>-L${LIBS_HOME}/wxMSW-<span>3.1</span>.<span>4_</span>gcc920TDM_Dev/lib/gcc920TDM_dll -L${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/lib/x86 -L${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Lib32
-</code></pre><p>64 bit dynamic:</p>
-<pre><code>-L${LIBS_HOME}/wxMSW-<span>3.1</span>.<span>4_</span>gcc810_x64_Dev/lib/gcc810_x64_dll -L${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/lib/x64 -L${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Lib64
+<pre><code>-L${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/lib -L${LIBS_HOME}/cairo-<span>1.16</span>.<span>0</span>/lib/x64 -L${LIBS_HOME}/gmp-<span>6.1</span>.<span>2</span>/lib/x64
+</code></pre><p>32 bit dynamic release:</p>
+<pre><code>-L${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/lib/gcc11.<span>2.0_</span>i686-posix-dwarf_dll -L${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/lib/x86 -L${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Lib32
+</code></pre><p>32 bit dynamic debug:</p>
+<pre><code>-L${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/lib/gcc11.<span>2.0_</span>i686d-posix-dwarf_dll -L${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/lib/x86 -L${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Lib32
+</code></pre><p>64 bit dynamic release:</p>
+<pre><code>-L${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/lib/gcc11.<span>2.0_</span>x86_64-posix-seh_dll -L${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/lib/x64 -L${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Lib64
+</code></pre><p>64 bit dynamic debug:</p>
+<pre><code>-L${LIBS_HOME}/wxWidgets-<span>3.1</span>.<span>3</span>/lib/gcc11.<span>2.0_</span>x86_64d-posix-seh_dll -L${LIBS_HOME}/cairo-windows-<span>1.15</span>.<span>12</span>/lib/x64 -L${LIBS_HOME}/Mpfr315Mpir272/MpfrMpir/Dynamic/Lib64
 </code></pre><p>Working library include sequences for my chosen compilers / linkers are given below, and be defined as <code>${LIBRARIES}</code>.</p>
 <h4 id="library-includes">Library Includes</h4>
 <p>32 bit static release:</p>
-<pre><code><span>-lgmp</span> <span>-lcairo</span> <span>-lpixman-1</span> <span>-lfreetype</span> <span>-lpng</span> <span>-lharfbuzz</span> <span>-lbz2</span> <span>-lwx_mswu-3</span><span>.1</span> <span>-lwxpng-3</span><span>.1</span> <span>-lwxscintilla-3</span><span>.1</span> <span>-lz</span> <span>-lrpcrt4</span> <span>-loleaut32</span> <span>-lole32</span> <span>-luuid</span> <span>-lwinspool</span> <span>-lwinmm</span> <span>-lshell32</span> <span>-lshlwapi</span> <span>-lcomctl32</span> <span>-lcomdlg32</span> <span>-ladvapi32</span> <span>-lversion</span> <span>-lwsock32</span> <span>-lgdi32</span>
+<pre><code><span>-lgmp</span> <span>-lcairo</span> <span>-lpixman-1</span> <span>-lfreetype</span> <span>-lpng</span> <span>-lharfbuzz</span> <span>-lbz2</span> <span>-lwx_mswu-3</span><span>.1</span> <span>-lwxpng-3</span><span>.1</span> <span>-lwxzlib-3</span><span>.1</span> <span>-lwxscintilla-3</span><span>.1</span> <span>-luxtheme</span> <span>-limm32</span> <span>-lz</span> <span>-lrpcrt4</span> <span>-loleaut32</span> <span>-lole32</span> <span>-luuid</span> <span>-loleacc</span> <span>-lwinspool</span> <span>-lwinmm</span> <span>-lshell32</span> <span>-lshlwapi</span> <span>-lcomctl32</span> <span>-lcomdlg32</span> <span>-ladvapi32</span> <span>-lversion</span> <span>-lwsock32</span> <span>-lgdi32</span>
 </code></pre><p>32 bit static debug:</p>
-<pre><code><span>-lgmp</span> <span>-lcairo</span> <span>-lpixman-1</span> <span>-lfreetype</span> <span>-lpng</span> <span>-lharfbuzz</span> <span>-lbz2</span> <span>-lwx_mswu-3</span><span>.1d</span> <span>-lwxpng-3</span><span>.1d</span> <span>-lwxscintilla-3</span><span>.1d</span> <span>-lz</span> <span>-lrpcrt4</span> <span>-loleaut32</span> <span>-lole32</span> <span>-luuid</span> <span>-lwinspool</span> <span>-lwinmm</span> <span>-lshell32</span> <span>-lshlwapi</span> <span>-lcomctl32</span> <span>-lcomdlg32</span> <span>-ladvapi32</span> <span>-lversion</span> <span>-lwsock32</span> <span>-lgdi32</span>
+<pre><code><span>-lgmp</span> <span>-lcairo</span> <span>-lpixman-1</span> <span>-lfreetype</span> <span>-lpng</span> <span>-lharfbuzz</span> <span>-lbz2</span> <span>-lwx_mswu-3</span><span>.1d</span> <span>-lwxpng-3</span><span>.1d</span> <span>-lwxzlib-3</span><span>.1d</span> <span>-lwxscintilla-3</span><span>.1d</span> <span>-luxtheme</span> <span>-limm32</span> <span>-lz</span> <span>-lrpcrt4</span> <span>-loleaut32</span> <span>-lole32</span> <span>-luuid</span> <span>-loleacc</span> <span>-lwinspool</span> <span>-lwinmm</span> <span>-lshell32</span> <span>-lshlwapi</span> <span>-lcomctl32</span> <span>-lcomdlg32</span> <span>-ladvapi32</span> <span>-lversion</span> <span>-lwsock32</span> <span>-lgdi32</span>
 </code></pre><p>64 bit static release:</p>
-<pre><code><span>-lgmp</span> <span>-lcairo</span> <span>-lpixman-1</span> <span>-lfreetype</span> <span>-lpng</span> <span>-lharfbuzz</span> <span>-lbz2</span> <span>-lwx_mswu-3</span><span>.1_x64</span> <span>-lwxpng-3</span><span>.1_x64</span> <span>-lwxscintilla-3</span><span>.1_x64</span> <span>-lz</span> <span>-lrpcrt4</span> <span>-loleaut32</span> <span>-lole32</span> <span>-luuid</span> <span>-lwinspool</span> <span>-lwinmm</span> <span>-lshell32</span> <span>-lshlwapi</span> <span>-lcomctl32</span> <span>-lcomdlg32</span> <span>-ladvapi32</span> <span>-lversion</span> <span>-lwsock32</span> <span>-lgdi32</span>
+<pre><code><span>-lgmp</span> <span>-lcairo</span> <span>-lpixman-1</span> <span>-lfreetype</span> <span>-lpng</span> <span>-lharfbuzz</span> <span>-lbz2</span> <span>-lwx_mswu-3</span><span>.1_x64</span> <span>-lwxpng-3</span><span>.1_x64</span> <span>-lwxzlib-3</span><span>.1_x64</span> <span>-lwxscintilla-3</span><span>.1_x64</span> <span>-luxtheme</span> <span>-limm32</span> <span>-lz</span> <span>-lrpcrt4</span> <span>-loleaut32</span> <span>-lole32</span> <span>-luuid</span> <span>-loleacc</span> <span>-lwinspool</span> <span>-lwinmm</span> <span>-lshell32</span> <span>-lshlwapi</span> <span>-lcomctl32</span> <span>-lcomdlg32</span> <span>-ladvapi32</span> <span>-lversion</span> <span>-lwsock32</span> <span>-lgdi32</span>
 </code></pre><p>64 bit static debug:</p>
-<pre><code><span>-lgmp</span> <span>-lcairo</span> <span>-lpixman-1</span> <span>-lfreetype</span> <span>-lpng</span> <span>-lharfbuzz</span> <span>-lbz2</span> <span>-lwx_mswu-3</span><span>.1d_x64</span> <span>-lwxpng-3</span><span>.1d_x64</span> <span>-lwxscintilla-3</span><span>.1d_x64</span> <span>-lz</span> <span>-lrpcrt4</span> <span>-loleaut32</span> <span>-lole32</span> <span>-luuid</span> <span>-lwinspool</span> <span>-lwinmm</span> <span>-lshell32</span> <span>-lshlwapi</span> <span>-lcomctl32</span> <span>-lcomdlg32</span> <span>-ladvapi32</span> <span>-lversion</span> <span>-lwsock32</span> <span>-lgdi32</span>
-</code></pre><p>32 bit dynamic release:</p>
-<pre><code>-lmpir32 -lcairo -lwxbase31u -lwxmsw31u_core -lwxmsw31u_stc -lwxmsw31u_adv -lrpcrt4 -loleaut32 -lole32 -luuid -lwinspool -lwinmm -lshell32 -lshlwapi -lcomctl32 -lcomdlg32 -ladvapi32 -lversion -lwsock32 -lgdi32
-</code></pre><p>32 bit dynamic debug:</p>
-<pre><code>-lmpir32 -lcairo -lwxbase31ud -lwxmsw31ud_core -lwxmsw31ud_stc -lwxmsw31ud_adv -lrpcrt4 -loleaut32 -lole32 -luuid -lwinspool -lwinmm -lshell32 -lshlwapi -lcomctl32 -lcomdlg32 -ladvapi32 -lversion -lwsock32 -lgdi32
-</code></pre><p>64 bit dynamic release:</p>
-<pre><code>-lmpir64 -lcairo -lwxbase31u -lwxmsw31u_core -lwxmsw31u_stc -lwxmsw31u_adv -lrpcrt4 -loleaut32 -lole32 -luuid -lwinspool -lwinmm -lshell32 -lshlwapi -lcomctl32 -lcomdlg32 -ladvapi32 -lversion -lwsock32 -lgdi32
-</code></pre><p>64 bit dynamic debug:</p>
-<pre><code>-lmpir64 -lcairo -lwxbase31ud -lwxmsw31ud_core -lwxmsw31ud_stc -lwxmsw31ud_adv -lrpcrt4 -loleaut32 -lole32 -luuid -lwinspool -lwinmm -lshell32 -lshlwapi -lcomctl32 -lcomdlg32 -ladvapi32 -lversion -lwsock32 -lgdi32
+<pre><code><span>-lgmp</span> <span>-lcairo</span> <span>-lpixman-1</span> <span>-lfreetype</span> <span>-lpng</span> <span>-lharfbuzz</span> <span>-lbz2</span> <span>-lwx_mswu-3</span><span>.1d_x64</span> <span>-lwxpng-3</span><span>.1d_x64</span> <span>-lwxzlib-3</span><span>.1d_x64</span> <span>-lwxscintilla-3</span><span>.1d_x64</span> <span>-luxtheme</span> <span>-limm32</span> <span>-lz</span> <span>-lrpcrt4</span> <span>-loleaut32</span> <span>-lole32</span> <span>-luuid</span> <span>-loleacc</span> <span>-lwinspool</span> <span>-lwinmm</span> <span>-lshell32</span> <span>-lshlwapi</span> <span>-lcomctl32</span> <span>-lcomdlg32</span> <span>-ladvapi32</span> <span>-lversion</span> <span>-lwsock32</span> <span>-lgdi32</span>
+</code></pre><p>32 bit dynamic:</p>
+<pre><code><span>-lmpir32</span> <span>-lcairo</span> <span>-lwx_baseu-3</span><span>.1</span><span>.dll</span> <span>-lwx_mswu_core-3</span><span>.1</span><span>.dll</span> <span>-lwx_mswu_stc-3</span><span>.1</span><span>.dll</span> <span>-lrpcrt4</span> <span>-loleaut32</span> <span>-lole32</span> <span>-luuid</span> <span>-lwinspool</span> <span>-lwinmm</span> <span>-lshell32</span> <span>-lshlwapi</span> <span>-lcomctl32</span> <span>-lcomdlg32</span> <span>-ladvapi32</span> <span>-lversion</span> <span>-lwsock32</span> <span>-lgdi32</span>
+</code></pre><p>64 bit dynamic:</p>
+<pre><code><span>-lmpir64</span> <span>-lcairo</span> <span>-lwx_baseu-3</span><span>.1</span><span>.dll</span> <span>-lwx_mswu_core-3</span><span>.1</span><span>.dll</span> <span>-lwx_mswu_stc-3</span><span>.1</span><span>.dll</span> <span>-lrpcrt4</span> <span>-loleaut32</span> <span>-lole32</span> <span>-luuid</span> <span>-lwinspool</span> <span>-lwinmm</span> <span>-lshell32</span> <span>-lshlwapi</span> <span>-lcomctl32</span> <span>-lcomdlg32</span> <span>-ladvapi32</span> <span>-lversion</span> <span>-lwsock32</span> <span>-lgdi32</span>
 </code></pre><p>Consider the following flags composed into <code>${LINKER_SETTINGS}</code>.</p>
 <h4 id="linker-settings">Linker Settings</h4>
 <table>
@@ -579,9 +483,9 @@ find <span>"<span>$p</span>/"</span> -maxdepth 1 -name <span>'libstdc++-6.dll'</
 <p>Now the full linker flags are</p>
 <pre><code><span>"<span>${SOURCE_GXX}</span>"</span> -o <span>${APP_FILE}</span> <span>${RESOURCE_PATHS}</span> <span>${OBJ_PATHS}</span> <span>${LIBRARY_PATHS}</span> <span>${LINKER_SETTINGS}</span> <span>${LIBRARIES}</span>
 </code></pre><p>to link <code>${FILE_NAME}.cpp</code>. There is an example at <a data-savepage-href="./icon" href="https://github.com/deontic-logic/proof-tool/blob/master/icon">icon/</a> of how to compile a resource file. The following is an exemplary instruction that Eclipse generated for me when building <code>Release64Bit</code>:</p>
-<pre><code><span>"C:\\mingw-w64\\winlibs-x86_64-posix-seh-gcc-10.2.0-mingw-w64-8.0.0-r1\\mingw64\\bin\\g++"</span> -o ProofTool.exe <span>"..\\icon\\icon_x64.res"</span> <span>"grammar\\CfgGrammar.o"</span> <span>"grammar\\CfgParser.o"</span> <span>"helper\\FctHelper.o"</span> <span>"helper\\IPrintable.o"</span> <span>"helper\\Resources.o"</span> main.o <span>"metamath\\MetamathParser.o"</span> <span>"metamath\\SetMmProofs.o"</span> <span>"metamath\\SetMmProofs1.o"</span> <span>"metamath\\SetMmProofs2.o"</span> <span>"nortmann\\DlCore.o"</span> <span>"nortmann\\DlProofs.o"</span> <span>"nortmann\\DlStructure.o"</span> <span>"nortmann\\DlStructureEnumerator.o"</span> <span>"svgren\\CanvasRegion.o"</span> <span>"svgren\\FilterApplier.o"</span> <span>"svgren\\Renderer.o"</span> <span>"svgren\\Surface.o"</span> <span>"svgren\\cssdom\\dom.o"</span> <span>"svgren\\cssdom\\parser.o"</span> <span>"svgren\\mikroxml\\mikroxml.o"</span> <span>"svgren\\papki\\file.o"</span> <span>"svgren\\papki\\span_file.o"</span> <span>"svgren\\papki\\util.o"</span> <span>"svgren\\papki\\vector_file.o"</span> <span>"svgren\\render.o"</span> <span>"svgren\\svgdom\\Parser.o"</span> <span>"svgren\\svgdom\\dom.o"</span> <span>"svgren\\svgdom\\elements\\aspect_ratioed.o"</span> <span>"svgren\\svgdom\\elements\\element.o"</span> <span>"svgren\\svgdom\\elements\\filter.o"</span> <span>"svgren\\svgdom\\elements\\gradients.o"</span> <span>"svgren\\svgdom\\elements\\image_element.o"</span> <span>"svgren\\svgdom\\elements\\rectangle.o"</span> <span>"svgren\\svgdom\\elements\\referencing.o"</span> <span>"svgren\\svgdom\\elements\\shapes.o"</span> <span>"svgren\\svgdom\\elements\\structurals.o"</span> <span>"svgren\\svgdom\\elements\\style.o"</span> <span>"svgren\\svgdom\\elements\\styleable.o"</span> <span>"svgren\\svgdom\\elements\\text_element.o"</span> <span>"svgren\\svgdom\\elements\\transformable.o"</span> <span>"svgren\\svgdom\\elements\\view_boxed.o"</span> <span>"svgren\\svgdom\\finder.o"</span> <span>"svgren\\svgdom\\length.o"</span> <span>"svgren\\svgdom\\stream_writer.o"</span> <span>"svgren\\svgdom\\style_stack.o"</span> <span>"svgren\\svgdom\\util.o"</span> <span>"svgren\\svgdom\\visitor.o"</span> <span>"svgren\\util.o"</span> <span>"svgren\\utki\\string.o"</span> <span>"svgren\\utki\\unicode.o"</span> <span>"tree\\layout\\SvgTreeEngine.o"</span> <span>"wxwidgets\\ANewWxClass.o"</span> <span>"wxwidgets\\DeonticStructureInputFrame.o"</span> <span>"wxwidgets\\DeonticStructureTextCtrlView.o"</span> <span>"wxwidgets\\DlProofCollectionGrid.o"</span> <span>"wxwidgets\\DlProofGrid.o"</span> <span>"wxwidgets\\DlProofGridFrame.o"</span> <span>"wxwidgets\\DlProofStepModifierDialog.o"</span> <span>"wxwidgets\\DlProofView.o"</span> <span>"wxwidgets\\DlProofViewerFrame.o"</span> <span>"wxwidgets\\PopupTransientSvgCmdChooser.o"</span> <span>"wxwidgets\\ProofToolApp.o"</span> <span>"wxwidgets\\StandardOutputContainerFrame.o"</span> <span>"wxwidgets\\SvgButton.o"</span> <span>"wxwidgets\\SvgLabel.o"</span> <span>"wxwidgets\\SvgRenConvert.o"</span> <span>"wxwidgets\\SvgScrollView.o"</span> <span>"wxwidgets\\SvgSwitchButton.o"</span> <span>"wxwidgets\\SymbolicLogicTextCtrlView.o"</span> <span>"wxwidgets\\SyntaxTreeViewerFrame.o"</span> <span>"wxwidgets\\TreeAccordion.o"</span> <span>"wxwidgets\\wxflataccordion\\wxFlatAccordion.o"</span> <span>"wxwidgets\\wxflatnotebook\\fnb_customize_dlg.o"</span> <span>"wxwidgets\\wxflatnotebook\\fnb_resources.o"</span> <span>"wxwidgets\\wxflatnotebook\\popup_dlg.o"</span> <span>"wxwidgets\\wxflatnotebook\\renderer.o"</span> <span>"wxwidgets\\wxflatnotebook\\wxFlatNotebook.o"</span> <span>"wxwidgets\\wxflatnotebook\\xh_fnb.o"</span> <span>"wxwidgets\\wxwindowstack\\wxWindowStack.o"</span> -s -LD:<span>/sciebo/</span>eclipse/wxWidgets<span>-3.1</span><span>.0</span>/lib -LD:<span>/sciebo/</span>eclipse/cairo<span>-1.16</span><span>.0</span>/lib/x64 -LD:<span>/sciebo/</span>eclipse/gmp<span>-6.1</span><span>.2</span>/<span>64</span>bit/lib -Wl,--subsystem,windows -mwindows -<span>static</span> -lgmp -lcairo -lpixman<span>-1</span> -lfreetype -lpng -lharfbuzz -lbz2 -lwx_mswu<span>-3.1</span>_x64 -lwxpng<span>-3.1</span>_x64 -lwxscintilla<span>-3.1</span>_x64 -lz -lrpcrt4 -loleaut32 -lole32 -luuid -lwinspool -lwinmm -lshell32 -lshlwapi -lcomctl32 -lcomdlg32 -ladvapi32 -lversion -lwsock32 -lgdi32
+<pre><code><span>"C:\\mingw-w64\\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r6\\mingw64\\bin\\g++"</span> -o ProofTool.exe <span>"..\\icon\\icon_x64.res"</span> <span>"grammar\\CfgGrammar.o"</span> <span>"grammar\\CfgParser.o"</span> <span>"helper\\FctHelper.o"</span> <span>"helper\\IPrintable.o"</span> <span>"helper\\Resources.o"</span> main.o <span>"metamath\\DRuleParser.o"</span> <span>"metamath\\MetamathParser.o"</span> <span>"metamath\\SetMmProofs.o"</span> <span>"metamath\\SetMmProofs1.o"</span> <span>"metamath\\SetMmProofs2.o"</span> <span>"nortmann\\DlCore.o"</span> <span>"nortmann\\DlProof.o"</span> <span>"nortmann\\DlProofCollection.o"</span> <span>"nortmann\\DlProofs.o"</span> <span>"nortmann\\DlStructure.o"</span> <span>"nortmann\\DlStructureEnumerator.o"</span> <span>"svgren\\CanvasRegion.o"</span> <span>"svgren\\FilterApplier.o"</span> <span>"svgren\\Renderer.o"</span> <span>"svgren\\Surface.o"</span> <span>"svgren\\cssdom\\dom.o"</span> <span>"svgren\\cssdom\\parser.o"</span> <span>"svgren\\mikroxml\\mikroxml.o"</span> <span>"svgren\\papki\\file.o"</span> <span>"svgren\\papki\\span_file.o"</span> <span>"svgren\\papki\\util.o"</span> <span>"svgren\\papki\\vector_file.o"</span> <span>"svgren\\render.o"</span> <span>"svgren\\svgdom\\Parser.o"</span> <span>"svgren\\svgdom\\dom.o"</span> <span>"svgren\\svgdom\\elements\\aspect_ratioed.o"</span> <span>"svgren\\svgdom\\elements\\element.o"</span> <span>"svgren\\svgdom\\elements\\filter.o"</span> <span>"svgren\\svgdom\\elements\\gradients.o"</span> <span>"svgren\\svgdom\\elements\\image_element.o"</span> <span>"svgren\\svgdom\\elements\\rectangle.o"</span> <span>"svgren\\svgdom\\elements\\referencing.o"</span> <span>"svgren\\svgdom\\elements\\shapes.o"</span> <span>"svgren\\svgdom\\elements\\structurals.o"</span> <span>"svgren\\svgdom\\elements\\style.o"</span> <span>"svgren\\svgdom\\elements\\styleable.o"</span> <span>"svgren\\svgdom\\elements\\text_element.o"</span> <span>"svgren\\svgdom\\elements\\transformable.o"</span> <span>"svgren\\svgdom\\elements\\view_boxed.o"</span> <span>"svgren\\svgdom\\finder.o"</span> <span>"svgren\\svgdom\\length.o"</span> <span>"svgren\\svgdom\\stream_writer.o"</span> <span>"svgren\\svgdom\\style_stack.o"</span> <span>"svgren\\svgdom\\util.o"</span> <span>"svgren\\svgdom\\visitor.o"</span> <span>"svgren\\util.o"</span> <span>"svgren\\utki\\string.o"</span> <span>"svgren\\utki\\unicode.o"</span> <span>"tree\\layout\\SvgTreeEngine.o"</span> <span>"wxwidgets\\ANewWxClass.o"</span> <span>"wxwidgets\\DeonticStructureInputFrame.o"</span> <span>"wxwidgets\\DeonticStructureTextCtrlView.o"</span> <span>"wxwidgets\\DialogFrame.o"</span> <span>"wxwidgets\\DlFormulaSearchSettingsDialog.o"</span> <span>"wxwidgets\\DlProofCollectionGrid.o"</span> <span>"wxwidgets\\DlProofEditView.o"</span> <span>"wxwidgets\\DlProofEditViewFrame.o"</span> <span>"wxwidgets\\DlProofGrid.o"</span> <span>"wxwidgets\\DlProofGridFrame.o"</span> <span>"wxwidgets\\DlProofStepModifierDialog.o"</span> <span>"wxwidgets\\PopupTransientSvgCmdChooser.o"</span> <span>"wxwidgets\\ProofToolApp.o"</span> <span>"wxwidgets\\StandardOutputContainerFrame.o"</span> <span>"wxwidgets\\SvgButton.o"</span> <span>"wxwidgets\\SvgLabel.o"</span> <span>"wxwidgets\\SvgRenConvert.o"</span> <span>"wxwidgets\\SvgScrollView.o"</span> <span>"wxwidgets\\SvgSwitchButton.o"</span> <span>"wxwidgets\\SymbolicLogicTextCtrlView.o"</span> <span>"wxwidgets\\SyntaxTreeViewerFrame.o"</span> <span>"wxwidgets\\TreeAccordion.o"</span> <span>"wxwidgets\\wxflataccordion\\wxFlatAccordion.o"</span> <span>"wxwidgets\\wxflatnotebook\\fnb_customize_dlg.o"</span> <span>"wxwidgets\\wxflatnotebook\\fnb_resources.o"</span> <span>"wxwidgets\\wxflatnotebook\\popup_dlg.o"</span> <span>"wxwidgets\\wxflatnotebook\\renderer.o"</span> <span>"wxwidgets\\wxflatnotebook\\wxFlatNotebook.o"</span> <span>"wxwidgets\\wxflatnotebook\\xh_fnb.o"</span> <span>"wxwidgets\\wxwindowstack\\wxWindowStack.o"</span> -s -LD:<span>/Dropbox/</span>eclipse/wxWidgets<span>-3.1</span><span>.3</span>/lib -LD:<span>/Dropbox/</span>eclipse/cairo<span>-1.16</span><span>.0</span>/lib/x64 -LD:<span>/Dropbox/</span>eclipse/gmp<span>-6.1</span><span>.2</span>/lib/x64 -Wl,--subsystem,windows -mwindows -<span>static</span> -lgmp -lcairo -lpixman<span>-1</span> -lfreetype -lpng -lharfbuzz -lbz2 -lwx_mswu<span>-3.1</span>_x64 -lwxpng<span>-3.1</span>_x64 -lwxzlib<span>-3.1</span>_x64 -lwxscintilla<span>-3.1</span>_x64 -luxtheme -limm32 -lz -lrpcrt4 -loleaut32 -lole32 -luuid -loleacc -lwinspool -lwinmm -lshell32 -lshlwapi -lcomctl32 -lcomdlg32 -ladvapi32 -lversion -lwsock32 -lgdi32 
 </code></pre><h3 id="results">Results</h3>
-<p>When the above settings are applied, the differences in sizes of outcomes are remarkable. For larger output files, the compiler also requires more time, whose order of magnitude is tens of minutes for a full rebuild. The following values of an early build are meant to give an impression of the differences. The corresponding binaries have been uploaded to <a href="https://github.com/deontic-logic/proof-tool/releases/tag/results_v1">releases/results_v1</a>.</p>
+<p>When the above settings are applied, the differences in sizes of outcomes are remarkable. For larger output files, the compiler also requires more time, whose order of magnitude is tens of minutes for a full rebuild. The following values of an early build are meant to give an impression of the differences. The corresponding binaries have been uploaded to <a href="https://github.com/deontic-logic/proof-tool/releases/tag/results_v2">releases/results_v2</a>.</p>
 <table>
 <thead>
 <tr>
@@ -595,62 +499,61 @@ find <span>"<span>$p</span>/"</span> -maxdepth 1 -name <span>'libstdc++-6.dll'</
 <tbody>
 <tr>
 <td>Static Release 32 bit</td>
-<td style="text-align:right">19 333 632</td>
+<td style="text-align:right">20 300 800</td>
 <td style="text-align:center">0</td>
 <td style="text-align:right">0</td>
-<td style="text-align:right">19 333 632</td>
+<td style="text-align:right">20 300 800</td>
 </tr>
 <tr>
 <td>Static Release 64 bit</td>
-<td style="text-align:right">18 431 488</td>
+<td style="text-align:right">19 540 992</td>
 <td style="text-align:center">0</td>
 <td style="text-align:right">0</td>
-<td style="text-align:right">18 431 488</td>
+<td style="text-align:right">19 540 992</td>
 </tr>
 <tr>
 <td>Dynamic Release 32 bit</td>
-<td style="text-align:right">6 797 312</td>
-<td style="text-align:center">5</td>
-<td style="text-align:right">26 945 624</td>
-<td style="text-align:right">33 742 936</td>
+<td style="text-align:right">7 046 144</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">25 829 399</td>
+<td style="text-align:right">32 875 543</td>
 </tr>
 <tr>
 <td>Dynamic Release 64 bit</td>
-<td style="text-align:right">5 889 024</td>
+<td style="text-align:right">6 789 120</td>
 <td style="text-align:center">8</td>
-<td style="text-align:right">25 789 899</td>
-<td style="text-align:right">31 678 923</td>
+<td style="text-align:right">26 289 353</td>
+<td style="text-align:right">33 078 473</td>
 </tr>
 <tr>
 <td>Static Debug 32 bit</td>
-<td style="text-align:right">238 636 355</td>
+<td style="text-align:right">274 894 935</td>
 <td style="text-align:center">0</td>
 <td style="text-align:right">0</td>
-<td style="text-align:right">238 636 355</td>
+<td style="text-align:right">274 894 935</td>
 </tr>
 <tr>
 <td>Static Debug 64 bit</td>
-<td style="text-align:right">263 489 372</td>
+<td style="text-align:right">302 350 796</td>
 <td style="text-align:center">0</td>
 <td style="text-align:right">0</td>
-<td style="text-align:right">263 489 372</td>
+<td style="text-align:right">302 350 796</td>
 </tr>
 <tr>
 <td>Dynamic Debug 32 bit</td>
-<td style="text-align:right">132 085 051</td>
-<td style="text-align:center">5</td>
-<td style="text-align:right">199 146 206</td>
-<td style="text-align:right">331 231 257</td>
+<td style="text-align:right">162 340 337</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">196 708 241</td>
+<td style="text-align:right">359 048 578</td>
 </tr>
 <tr>
 <td>Dynamic Debug 64 bit</td>
-<td style="text-align:right">151 289 711</td>
+<td style="text-align:right">180 782 424</td>
 <td style="text-align:center">8</td>
-<td style="text-align:right">213 857 538</td>
-<td style="text-align:right">365 147 249</td>
+<td style="text-align:right">213 090 399</td>
+<td style="text-align:right">393 872 823</td>
 </tr>
 </tbody>
 </table>
-<p>Note that the dynamic 32 bit executables do not reference any of the GCC STD libraries since TDM-GCC does neither do that on default, nor correctly. There is a custom TDM-GCC <a href="https://github.com/jmeubank/tdm-distrib/blob/master/tdm64/core/README-gcc-tdm64.md#exceptions-and-dlls">option</a> <code>-shared-libstdc++</code> to <em>not</em> apply the static insertion, but it does not seem to work. When using this flag, the resulting executable crashes on exceptions and on exit.</p>
 </div></div>
 </body></html>
