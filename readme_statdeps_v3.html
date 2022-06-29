@@ -356,7 +356,8 @@ Which libraries should wxWidgets <span>use</span>?
 </ul>
 </li>
 <li>In <code>./Makefile</code>, change <code>wx_top_builddir = /cygdrive/c/wxWidgets-3.1.3</code> to <code>wx_top_builddir = C:/wxWidgets-3.1.3</code>.</li>
-<li>Execute command in Cygwin64 Terminal:<ul>
+<li>Shut down Cygwin64 Terminal and open CMD, then execute commands:<ul>
+<li><code>cd C:/wxWidgets-3.1.3</code></li>
 <li><code>mingw32-make [...]</code> depending on the variant as noted above<br>
 The process terminates with an error <code>mingw32-make: *** [makefile:14768: wxrc] Error 2</code>, but built all the static libraries already.</li>
 </ul>
