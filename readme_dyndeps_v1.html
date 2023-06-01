@@ -1,4 +1,4 @@
-﻿<html><head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <title>README</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +7,19 @@
  * Gained from https://github.com/KrauseFx/markdown-to-html-github-style/blob/master/style.css (partly modified)
  */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-    font-size: 16px;
-    line-height: 1.5;
-    word-wrap: break-word;
-    box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  box-sizing: border-box;
   color: #111;
   background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
   padding: 30px;
 }
 body > #content {
@@ -37,15 +43,19 @@ hr {
 }
 a {
   color: #0366d6;
-  text-decoration: none; }
-  a:visited {
-    color: #0366d6; }
-  a:hover {
-    color: #0366d6;
-    text-decoration: underline; }
+  text-decoration: none;
+}
+a:visited {
+  color: #0366d6;
+}
+a:hover {
+  color: #0366d6;
+  text-decoration: underline;
+}
 pre {
   background-color: #f6f8fa;
   border-radius: 3px;
+  font-size: 85%;
   line-height: 1.45;
   overflow: auto;
   padding: 16px;
@@ -63,6 +73,7 @@ pre > code {
   background-color: transparent;
   border: 0;
   display: inline;
+  font-size: inherit;
   line-height: inherit;
   margin: 0;
   overflow: visible;
@@ -88,8 +99,8 @@ blockquote * {
   color: #6a737d !important;
 }
 table {
-    width: max-content;
-    max-width: 100%;
+  width: max-content;
+  max-width: 100%;
   line-height: 1.5;
   border-spacing: 3px;
   display: block;
@@ -119,83 +130,96 @@ img {
 p {
   line-height: 24px;
   font-size: 16px;
-  color: #24292e; }
+  color: #24292e;
+}
 ul {
-  margin-top: 0; }
+  margin-top: 0;
+}
 li {
   color: #24292e;
   font-size: 16px;
-  line-height: 1.5; }
+  line-height: 1.5;
+}
 li + li {
-  margin-top: 0.25em; }
+  margin-top: 0.25em;
+}
 a:visited {
-  color: #0366d6; }
+  color: #0366d6;
+}
 h1, h2 {
   border-bottom: 1px solid #eaecef;
-  color: #111; }
+  color: #111;
+}
 
 /**
  * Gained from analysis in Mozilla Firefox inspector
  */
 .markdown-container {
-    max-width: 1214px;
-    margin: auto;
-    background-color: #fff;
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
+  max-width: 1214px;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
 }
 .markdown-container img {
-    background-color: #fff;
+  background-color: #fff;
 }
 .markdown-container table img {
-    background-color: transparent;
+  background-color: transparent;
 }
 #readme {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+.container-lg {
+  max-width: 1216px;
+  margin-right: auto;
+  margin-left: auto;
 }
 img {
-    border-style: none;
-    box-sizing: initial;
-    margin-left: 0;
-    margin-right: 0;
+  border-style: none;
+  box-sizing: initial;
+  margin-left: 0;
+  margin-right: 0;
 }
 img[align="left"] {
-    padding-right: 20px;
+  padding-right: 20px;
 }
 img[align=right] {
-    padding-left:20px;
+  padding-left:20px;
 }
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 24px;
-    margin-bottom: 16px;
-    font-weight: 600;
-    line-height: 1.25;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
 }
 h1, h2 {
-    padding-bottom: .3em;
+  padding-bottom: .3em;
+}
+h1 {
+  font-size: 2em;
 }
 h3 {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 ol, ul {
-    padding-left: 2em;
+  padding-left: 2em;
 }
 ol ol, ul ol {
-    list-style-type: lower-roman;
+  list-style-type: lower-roman;
 }
 ol ol ol, ol ul ol, ul ol ol, ul ul ol {
-    list-style-type: lower-alpha;
+  list-style-type: lower-alpha;
 }
 li br {
-    box-sizing: border-box;
-    line-height: 1.5;
-    margin-bottom: 6px;
+  box-sizing: border-box;
+  line-height: 1.5;
 }
 b, strong {
-    font-weight: 600;
+  font-weight: 600;
 }
 </style>
 
@@ -203,7 +227,7 @@ b, strong {
   :root {
   }
 </style>
-<script id="savepage-shadowloader" type="application/javascript">
+<script id="savepage-shadowloader" type="text/javascript">
   "use strict";
   window.addEventListener("DOMContentLoaded",
   function(event) {
@@ -215,12 +239,12 @@ b, strong {
 <meta name="savepage-title" content="README">
 <meta name="savepage-pubdate" content="Unknown">
 <meta name="savepage-from" content="https://github.com/deontic-logic/proof-tool/blob/master/README_dyndeps_v1.html">
-<meta name="savepage-date" content="Mon Oct 10 2022 16:53:53 GMT+0200 (Mitteleuropäische Sommerzeit)">
+<meta name="savepage-date" content="Thu Jun 01 2023 19:22:57 GMT+0200 (Mitteleuropäische Sommerzeit)">
 <meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
-<meta name="savepage-version" content="27.6">
+<meta name="savepage-version" content="28.11">
 <meta name="savepage-comments" content="">
   </head>
-<body><div class="markdown-container ltr"><div id="readme"><img data-savepage-currentsrc="https://github.com/deontic-logic/proof-tool/blob/master/icon/icon-readme.png" data-savepage-src="icon/icon-readme.png" src="data:image/png;base64,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" align="left">
+<body><div class="markdown-container ltr"><div id="readme"><article class="container-lg"><img data-savepage-currentsrc="https://github.com/deontic-logic/proof-tool/blob/master/icon/icon-readme.png" data-savepage-src="icon/icon-readme.png" src="data:image/png;base64,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" alt="icon" style="float: left; padding-right: 20px; margin-top: -24px;">
 <h1 id="deontic-logic-proof-tool-releases-dyndeps_v1">@deontic-logic/proof-tool/releases/dyndeps_v1</h1>
 <p>Dynamic libraries of Cairo 1.17.2, MPIR 2.7.2 and wxWidgets 3.1.3, for MinGW-w64 GCC compiler.</p>
 <ul>
@@ -339,8 +363,7 @@ Configuring commands for wxWidgets 3.1.3 that I executed in <a href="https://git
 [HKEY_CLASSES_ROOT\Applications\mintty.exe\shell\open\<span>command</span>]
 @=<span>"\"D:\\cygwin64\\bin\\mintty.exe\" -w max -h always -t \"%1\" -e /bin/bash -li -c 'cd \"<span>$(dirname \"$(cygpath -u \"%1\")</span>\")\" &amp;&amp; bash -x \"<span>$(cygpath -u \"%1\")</span>\"'"</span>
 ; This is a simple registry file to automate the execution of sh via cygwin on Windows 7, might work on other Windows versions ... I did not <span>test</span>.
-</code></pre><p>(Note that CR LF is not a valid line ending in <code>.sh</code> files. There are editors such as <a data-savepage-href="https://notepad-plus-plus.org" href="https://notepad-plus-plus.org/">Notepad++</a> to properly view and edit them on Windows.)
-The following script does not only replace certain terms in all files in its directory (including subfolders) to correct the makefiles, but also configures them for a better naming of the resulting libraries. I created <code>__replacer.sh</code> into an empty folder (for safety measures), with contents:</p>
+</code></pre><p>(Note that CR LF is not a valid line ending in <code>.sh</code> files. There are editors such as <a data-savepage-href="https://notepad-plus-plus.org" href="https://notepad-plus-plus.org/">Notepad++</a> to properly view and edit them on Windows.)<br>The following script does not only replace certain terms in all files in its directory (including subfolders) to correct the makefiles, but also configures them for a better naming of the resulting libraries. I created <code>__replacer.sh</code> into an empty folder (for safety measures), with contents:</p>
 <pre><code>#!/bin/bash
 <span>grep</span> --exclude=<span>"__replacer.sh"</span> -rl <span>'\/cygdrive\/c'</span> ./ | sed -<span>e</span> <span>'s/^/"/g'</span> -<span>e</span> <span>'s/$/"/g'</span> | <span>tr</span> <span>'\n'</span> <span>' '</span> | xargs sed -i <span>'s/\/cygdrive\/c/C:/g'</span>
 <span>grep</span> --exclude=<span>"__replacer.sh"</span> -rl <span>'\/cygdrive\/d'</span> ./ | sed -<span>e</span> <span>'s/^/"/g'</span> -<span>e</span> <span>'s/$/"/g'</span> | <span>tr</span> <span>'\n'</span> <span>' '</span> | xargs sed -i <span>'s/\/cygdrive\/d/D:/g'</span>
@@ -425,5 +448,5 @@ The process should successfully build all the binaries.</li>
 </li>
 <li>For 64 bit, in <code>./lib/wx/include</code>, rename the generated folder <code>msw-unicode-3.1</code> to <code>msw-unicode-3.1_x64</code>.</li>
 </ol>
-</div></div>
+</article></div></div>
 </body></html>
